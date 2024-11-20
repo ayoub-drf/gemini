@@ -1,5 +1,5 @@
 .sidebar {
-    min-height: 100vh;
+    height: 100vh;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,6 +7,8 @@
     padding: 25px 5px;
     align-items: center;
     transition: 1s;
+    position: sticky;
+    top: 0;
 }
 
 .sidebar img {

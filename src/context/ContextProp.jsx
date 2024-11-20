@@ -8,19 +8,19 @@ const ContextProp = (props) => {
     const [recentPrompt, setRecentPrompt] = useState('')
     const [showResult, setShowResult] = useState(false)
     const [previousPrompt, setPreviousPrompt] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [resultData, setResultData] = useState("")
 
     const onSent = async (prompt) => {
-        setLoading(true)
-        setResultData()
         setShowResult(true)
+        setLoading(true)
         try {
           const res = await runGemini(prompt);
             setLoading(false)
+            setRecentPrompt(input)
             setInput("")
             setResultData(res)
-            console.log(res)
+            setPreviousPrompt(res)
             return res
         } catch (err) {
           console.log(err)
